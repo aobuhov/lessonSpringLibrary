@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<style>
+    hr {
+        border: none; /* Убираем границу */
+        background-color: black; /* Цвет линии */
+        color: black; /* Цвет линии для IE6-7 */
+        height: 2px; /* Толщина линии */
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Список всех людей</title>
+</head>
+<body>
+
+<div th:each="person : ${people}">
+    <a th:href="@{/people/{id}(id=${person.getId()})}"
+       th:text="${person.getFio() + ', ' + person.getYear()}">user</a>
+</div>
+
+<br/>
+<hr/>
+
+<a href="/people/new">Добавить человека</a>
+
+</body>
+</html>

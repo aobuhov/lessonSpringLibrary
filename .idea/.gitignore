@@ -1,0 +1,8 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../../../../:\Users\obuhov.alexey\Documents\NetBeansProjects\spring\SpringCourseLibraryTest\Lesson27.SpringJdbcTemplate\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

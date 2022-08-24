@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<style>
+    hr {
+        border: none; /* Убираем границу */
+        background-color: black; /* Цвет линии */
+        color: black; /* Цвет линии для IE6-7 */
+        height: 2px; /* Толщина линии */
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Страница человека</title>
+</head>
+<body>
+<p th:text="${person.getFio() + ', ' + person.getYear()}">VALUE</p>
+<p th:text="${person.getId()}">человечек</p>
+
+<hr>
+<div th:if="${books.isEmpty()}">
+    <p>Человек пока не звял ни одной книги</p>
+</div>
+<div th:unless="${books.isEmpty()}">
+    <p>Книги:</p>
+    <div th:each="book : ${books}">
+        <p th:text="${book.getName()}">книга</p>
+    </div>
+</div>
+
+<hr>
+<form th:method="GET" th:action="@{/people/{id}/edit(id=${person.getId()})}">
+    <input type="submit" value="Редактировать"/>
+</form>
+<br>
+<form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
+    <input type="submit" value="Удалить человека"/>
+</form>
+</body>
+</html>
